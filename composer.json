@@ -1,0 +1,41 @@
+{
+    "name": "spatie/array-filter",
+    "description": "Array filter redux",
+    "keywords": [
+        "spatie",
+        "array-filter"
+    ],
+    "homepage": "https://github.com/freekmurze/array-filter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://murze.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "files": ["src/array_filter.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\ArrayFilter\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
