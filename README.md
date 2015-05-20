@@ -41,8 +41,10 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Testing
 
-``` bash
-$ composer test
+You can run the tests with:
+
+```bash
+vendor/bin/phpunit
 ```
 
 ## Contributing
