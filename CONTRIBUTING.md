@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/freekmurze/array-filter).
+We accept contributions via Pull Requests on [Github](https://github.com/freekmurze/array-functions).
 
 
 ## Pull Requests

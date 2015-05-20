@@ -1,11 +1,13 @@
 {
-    "name": "spatie/array-filter",
-    "description": "Array filter redux",
+    "name": "spatie/array-functions",
+    "description": "Some handy array helpers",
     "keywords": [
         "spatie",
-        "array-filter"
+        "array",
+        "helper",
+        "handy"
     ],
-    "homepage": "https://github.com/freekmurze/array-filter",
+    "homepage": "https://github.com/freekmurze/array-functions",
     "license": "MIT",
     "authors": [
         {
@@ -23,11 +25,11 @@
         "scrutinizer/ocular": "~1.1"
     },
     "autoload": {
-        "files": ["src/array_filter.php"]
+        "files": ["src/array_functions.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\ArrayFilter\\Test\\": "tests"
+            "Spatie\\Test\\": "tests"
         }
     },
     "scripts": {

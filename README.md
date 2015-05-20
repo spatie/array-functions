@@ -1,32 +1,39 @@
-##WORK IN PROGRESS...
 
-# array-filter
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/array-filter.svg?style=flat-square)](https://packagist.org/packages/spatie/array-filter)
+# Some handy array functions.
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/array-functions.svg?style=flat-square)](https://packagist.org/packages/spatie/array-functions)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/freekmurze/array-filter/master.svg?style=flat-square)](https://travis-ci.org/freekmurze/array-filter)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/freekmurze/array-filter.svg?style=flat-square)](https://scrutinizer-ci.com/g/freekmurze/array-filter/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/freekmurze/array-filter.svg?style=flat-square)](https://scrutinizer-ci.com/g/freekmurze/array-filter)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/array-filter.svg?style=flat-square)](https://packagist.org/packages/spatie/array-filter)
+[![Build Status](https://img.shields.io/travis/freekmurze/array-functions/master.svg?style=flat-square)](https://travis-ci.org/freekmurze/array-functions)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/freekmurze/array-functions.svg?style=flat-square)](https://scrutinizer-ci.com/g/freekmurze/array-functions/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/freekmurze/array-functions.svg?style=flat-square)](https://scrutinizer-ci.com/g/freekmurze/array-functions)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/array-functions.svg?style=flat-square)](https://packagist.org/packages/spatie/array-functions)
 
-**Note:** Replace ```Freek Van der Herten``` ```freekmurze``` ```https://murze.be``` ```freek@spatie.be``` ```array-filter``` ```Array filter redux``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+This package provides some handy array functions. Ok, right now, there's only one functions, but some more will be added in the future.
 
 ## Install
 
-Via Composer
+You can install this package via composer:
 
 ``` bash
-$ composer require spatie/array-filter
+composer require spatie/array-functions
 ```
 
 ## Usage
 
-``` php
-$skeleton = new spatie\Skeleton();
-echo $skeleton->echoPhrase('Hello, spatie!');
+The following functions are provided:
+
+### array_rand_value
+
+```php
+/**
+ * Get a random value from an array.
+ *
+ * @param array $array
+ *
+ * @return string
+ */
+function array_rand_value(array $array)
 ```
 
 ## Change log
