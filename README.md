@@ -20,7 +20,7 @@ composer require spatie/array-functions
 
 ## Usage
 
-The following functions are provided:
+The following functions are provided in the `Spatie`-namespace:
 
 ### array_rand_value
 
