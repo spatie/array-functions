@@ -19,3 +19,19 @@ function array_rand_value(array $array)
 
     return $array[$index];
 }
+
+/**
+ * Determine if all given needles are present in the haystack.
+ *
+ * @param array|string $needles
+ * @param array $haystack
+ * @return bool
+ */
+function values_in_array($needles, array $haystack)
+{
+    if (! is_array($needles)) {
+        $needles = [$needles];
+    }
+
+    return count(array_intersect($needles, $haystack)) == count($needles);
+}

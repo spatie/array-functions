@@ -8,7 +8,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/freekmurze/array-functions.svg?style=flat-square)](https://scrutinizer-ci.com/g/freekmurze/array-functions)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/860364d5-1d74-4cf8-bdb1-c5e18cdc8a70/mini.png)](https://insight.sensiolabs.com/projects/860364d5-1d74-4cf8-bdb1-c5e18cdc8a70)
 
-This package provides some handy array functions. Ok, right now, there's only one function, but some more will be added in the future.
+This package provides some handy array functions. 
 
 ## Install
 
@@ -33,6 +33,18 @@ The following functions are provided in the `Spatie`-namespace:
  * @return string
  */
 function array_rand_value(array $array)
+```
+
+### values_in_array
+```php
+/**
+ * Determine if all given needles are present in the haystack.
+ *
+ * @param array|string $needles
+ * @param array $haystack
+ * @return bool
+ */
+function values_in_array($needles, array $haystack)
 ```
 
 ## Change log
