@@ -6,8 +6,7 @@ namespace Spatie;
  * Get a random value from an array.
  *
  * @param array $array
- *
- * @return string
+ * @return mixed
  */
 function array_rand_value(array $array)
 {
