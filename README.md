@@ -30,7 +30,7 @@ The following functions are provided in the `Spatie`-namespace:
  *
  * @param array $array
  *
- * @return string
+ * @return mixed
  */
 function array_rand_value(array $array)
 ```
@@ -42,6 +42,7 @@ function array_rand_value(array $array)
  *
  * @param array|string $needles
  * @param array $haystack
+ *
  * @return bool
  */
 function values_in_array($needles, array $haystack)
