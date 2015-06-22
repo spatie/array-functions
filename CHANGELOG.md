@@ -2,6 +2,10 @@
 
 All Notable changes to `array-functions` will be documented in this file
 
+## 1.2.0 - 2015-06-22
+
+- added array_rand_weighted function
+
 ## 1.1.0 - 2015-05-11
 
 ### Added
