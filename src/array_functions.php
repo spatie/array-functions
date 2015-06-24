@@ -24,7 +24,7 @@ function array_rand_value(array $array)
  * Get a random value from an array, with the ability to skew the results.
  * Example: array_rand_weighted(['foo' => 1, 'bar' => 2]) has a 66% chance of returning bar.
  * 
- * @param array $key
+ * @param array $array
  * 
  * @return mixed
  */
