@@ -7,6 +7,7 @@
 [![Build Status](https://img.shields.io/travis/spatie/array-functions/master.svg?style=flat-square)](https://travis-ci.org/spatie/array-functions)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/array-functions.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/array-functions)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/860364d5-1d74-4cf8-bdb1-c5e18cdc8a70/mini.png)](https://insight.sensiolabs.com/projects/860364d5-1d74-4cf8-bdb1-c5e18cdc8a70)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/array-functions.svg?style=flat-square)](https://packagist.org/packages/spatie/array-functions)
 
 This package provides some handy array functions. 
 
