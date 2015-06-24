@@ -57,3 +57,20 @@ function values_in_array($needles, array $haystack)
 
     return count(array_intersect($needles, $haystack)) == count($needles);
 }
+
+/**
+ * Determine if all given needles are present in the haystack as array keys.
+ * 
+ * @param array|string $needles
+ * @param array $haystack
+ *
+ * @return bool
+ */
+function array_keys_exist($needles, array $haystack)
+{
+    if (!is_array($needles)) {
+        return array_key_exists($needles, $haystack);
+    }
+
+    return values_in_array($needles, array_keys($haystack));   
+}
