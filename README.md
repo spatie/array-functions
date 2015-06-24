@@ -23,7 +23,6 @@ composer require spatie/array-functions
 The following functions are provided in the `Spatie`-namespace:
 
 ### array_rand_value
-
 ```php
 /**
  * Get a random value from an array.
@@ -33,6 +32,19 @@ The following functions are provided in the `Spatie`-namespace:
  * @return mixed
  */
 function array_rand_value(array $array)
+```
+
+### array_rand_weighted
+```php
+/**
+ * Get a random value from an array, with the ability to skew the results.
+ * Example: array_rand_weighted(['foo' => 1, 'bar' => 2]) has a 66% chance of returning bar.
+ * 
+ * @param array $key
+ * 
+ * @return mixed
+ */
+function array_rand_weighted(array $array)
 ```
 
 ### values_in_array
@@ -46,6 +58,19 @@ function array_rand_value(array $array)
  * @return bool
  */
 function values_in_array($needles, array $haystack)
+```
+
+### array_keys_exist
+```php
+/**
+ * Determine if all given needles are present in the haystack as array keys.
+ * 
+ * @param array|string $needles
+ * @param array $haystack
+ *
+ * @return bool
+ */
+function array_keys_exist($needles, array $haystack)
 ```
 
 ## Change log
