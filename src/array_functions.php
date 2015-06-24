@@ -21,6 +21,27 @@ function array_rand_value(array $array)
 }
 
 /**
+ * Get a random value from an array, with the ability to skew the results.
+ * Example: array_rand_weighted(['foo' => 1, 'bar' => 2]) has a 66% chance of returning bar.
+ * 
+ * @param array $key
+ * 
+ * @return mixed
+ */
+function array_rand_weighted(array $array)
+{
+    $options = [];
+
+    foreach ($array as $option => $weight) {
+        for ($i = 0; $i < $weight; ++$i) {
+            $options[] = $option;
+        }
+    }
+
+    return array_rand_value($options);
+}
+
+/**
  * Determine if all given needles are present in the haystack.
  *
  * @param array|string $needles
@@ -35,17 +56,4 @@ function values_in_array($needles, array $haystack)
     }
 
     return count(array_intersect($needles, $haystack)) == count($needles);
-}
-
-function array_rand_weighted(array $array)
-{
-    $options = [];
-
-    foreach ($array as $option => $weight) {
-        for ($i = 0; $i < $weight; ++$i) {
-            $options[] = $option;
-        }
-    }
-
-    return array_rand_value($options);
 }
