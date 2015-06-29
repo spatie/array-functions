@@ -30,4 +30,19 @@ class ArrayRandValueTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue(in_array($randomArrayValue, $testArrayValues));
     }
+
+    /**
+     * @test
+     */
+    public function it_can_get_multiple_random_values()
+    {
+        $testArrayValues = array_values($this->testArray);
+        $randomArrayValues = array_rand_value($this->testArray, 2);
+
+        $this->assertCount(2, $randomArrayValues);
+
+        foreach ($randomArrayValues as $randomArrayValue) {
+            $this->assertTrue(in_array($randomArrayValue, $testArrayValues));
+        }
+    }
 }

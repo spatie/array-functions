@@ -6,18 +6,23 @@ namespace Spatie;
  * Get a random value from an array.
  *
  * @param array $array
+ * @param int $numReq
  *
  * @return mixed
  */
-function array_rand_value(array $array)
+function array_rand_value(array $array, $numReq = 1)
 {
     if (!count($array)) {
         return;
     }
 
-    $index = array_rand($array);
+    $keys = array_rand($array, $numReq);
 
-    return $array[$index];
+    if ($numReq === 1) {
+        return $array[$keys];
+    }
+
+    return array_intersect_key($array, array_flip($keys));
 }
 
 /**
