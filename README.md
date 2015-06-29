@@ -29,10 +29,10 @@ The following functions are provided in the `Spatie`-namespace:
  * Get a random value from an array.
  *
  * @param array $array
- *
+ * @param int $numReq  The amount of values to return
  * @return mixed
  */
-function array_rand_value(array $array)
+function array_rand_value(array $array, $numReq = 1)
 ```
 
 ### array_rand_weighted

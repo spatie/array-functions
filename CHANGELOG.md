@@ -2,6 +2,11 @@
 
 All Notable changes to `array-functions` will be documented in this file
 
+## 1.4.0 - 2015-06-29
+
+### Added
+- array_rand_value now can return multiple values (like array_rand)
+
 ## 1.3.0 - 2015-06-24
 
 ### Added

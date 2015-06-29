@@ -6,7 +6,7 @@ namespace Spatie;
  * Get a random value from an array.
  *
  * @param array $array
- * @param int $numReq
+ * @param int $numReq  The amount of values to return
  *
  * @return mixed
  */
