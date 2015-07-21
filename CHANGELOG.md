@@ -2,6 +2,11 @@
 
 All Notable changes to `array-functions` will be documented in this file
 
+## 1.5.0 - 2015-06-29
+
+### Added
+- array_split_filter function
+
 ## 1.4.0 - 2015-06-29
 
 ### Added

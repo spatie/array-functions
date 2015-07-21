@@ -63,5 +63,4 @@ class ValuesInArrayTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(values_in_array('d', ['a', 'b', 'c']));
         $this->assertFalse(values_in_array(['d'], ['a', 'b', 'c']));
     }
-
 }

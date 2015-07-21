@@ -70,5 +70,4 @@ class ArrayKeysExistTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(array_keys_exist('d', ['a' => 'foo', 'b' => 'bar', 'c' => 'baz']));
         $this->assertFalse(array_keys_exist(['d'], ['a' => 'foo', 'b' => 'bar', 'c' => 'baz']));
     }
-
 }

@@ -76,6 +76,24 @@ function values_in_array($needles, array $haystack)
 function array_keys_exist($needles, array $haystack)
 ```
 
+```php`
+/**
+ * Returns an array with two elements.
+ * 
+ * Iterates over each value in the array passing them to the callback function.
+ * If the callback function returns true, the current value from array is returned in the first
+ * element of result array. If not, it is return in the second element of result array.
+ *
+ * Array keys are preserved.
+ *
+ * @param array $array
+ * @param callable $callback
+ * @return array
+ *
+ */
+function array_split_filter(array $array, callable $callback)
+``
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.

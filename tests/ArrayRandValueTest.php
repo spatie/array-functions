@@ -9,7 +9,7 @@ class ArrayRandValueTest extends \PHPUnit_Framework_TestCase
     protected $testArray = [
         'one' => 'a',
         'two' => 'b',
-        'three' => 'c'
+        'three' => 'c',
     ];
 
     /**
