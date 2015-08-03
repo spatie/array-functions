@@ -76,7 +76,8 @@ function values_in_array($needles, array $haystack)
 function array_keys_exist($needles, array $haystack)
 ```
 
-```php`
+### array_split_filter
+```php
 /**
  * Returns an array with two elements.
  * 
@@ -92,7 +93,7 @@ function array_keys_exist($needles, array $haystack)
  *
  */
 function array_split_filter(array $array, callable $callback)
-``
+```
 
 ## Change log
 
