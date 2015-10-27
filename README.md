@@ -9,7 +9,7 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/860364d5-1d74-4cf8-bdb1-c5e18cdc8a70/mini.png)](https://insight.sensiolabs.com/projects/860364d5-1d74-4cf8-bdb1-c5e18cdc8a70)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/array-functions.svg?style=flat-square)](https://packagist.org/packages/spatie/array-functions)
 
-This package provides some handy array functions. 
+This package provides some handy array functions.
 
 Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
@@ -42,9 +42,9 @@ function array_rand_value(array $array, $numReq = 1)
 /**
  * Get a random value from an array, with the ability to skew the results.
  * Example: array_rand_weighted(['foo' => 1, 'bar' => 2]) has a 66% chance of returning bar.
- * 
+ *
  * @param array $key
- * 
+ *
  * @return mixed
  */
 function array_rand_weighted(array $array)
@@ -67,7 +67,7 @@ function values_in_array($needles, array $haystack)
 ```php
 /**
  * Determine if all given needles are present in the haystack as array keys.
- * 
+ *
  * @param array|string $needles
  * @param array $haystack
  *
@@ -80,7 +80,7 @@ function array_keys_exist($needles, array $haystack)
 ```php
 /**
  * Returns an array with two elements.
- * 
+ *
  * Iterates over each value in the array passing them to the callback function.
  * If the callback function returns true, the current value from array is returned in the first
  * element of result array. If not, it is return in the second element of result array.
@@ -93,6 +93,95 @@ function array_keys_exist($needles, array $haystack)
  *
  */
 function array_split_filter(array $array, callable $callback)
+```
+
+### array_divide
+```php
+/**
+ * Divide an array into two arrays. One with keys and the other with values.
+ *
+ * @param array $array
+ *
+ * @return array
+ */
+function array_divide($array)
+```
+
+### array_where
+```php
+/**
+ * Filter the array using the given Closure.
+ *
+ * @param array $array
+ * @param \Closure $callback
+ *
+ * @return array
+ */
+function array_where($array, Closure $callback)
+```
+
+### array_build
+```php
+/**
+ * Build a new array using a callback.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ *
+ * @return array
+ */
+function array_build($array, Closure $callback)
+```
+
+### array_dot
+```php
+/**
+ * Flatten a multi-dimensional associative array with dots.
+ *
+ * @param  array   $array
+ * @param  string  $prepend
+ *
+ * @return array
+ */
+function array_dot($array, $prepend = '')
+```
+
+### array_except
+```php
+/**
+ * Get all of the given array except for a specified array of items.
+ *
+ * @param  array  $array
+ * @param  array|string  $keys
+ *
+ * @return array
+ */
+```
+
+### array_first
+```php
+/**
+ * Return the first element in an array passing a given truth test.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ * @param  mixed     $default
+ *
+ * @return mixed
+ */
+function array_first($array, $callback, $default = null)
+```
+
+### array_flatten
+```php
+/**
+ * Flatten a multi-dimensional array into a single level.
+ *
+ * @param  array  $array
+ *
+ * @return array
+ */
+function array_flatten($array)
 ```
 
 ## Change log
