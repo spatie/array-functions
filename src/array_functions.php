@@ -104,3 +104,131 @@ function array_split_filter(array $array, callable $callback)
 
     return [$passesFilter, $doesNotPassFilter];
 }
+
+/**
+ * Divide an array into two arrays. One with keys and the other with values.
+ *
+ * @param array $array
+ *
+ * @return array
+ */
+function array_divide($array)
+{
+    return array(array_keys($array), array_values($array));
+}
+
+/**
+ * Filter the array using the given Closure.
+ *
+ * @param array $array
+ * @param \Closure $callback
+ *
+ * @return array
+ */
+function array_where($array, Closure $callback)
+{
+    $filtered = array();
+
+    foreach ($array as $key => $value)
+    {
+        if (call_user_func($callback, $key, $value)) $filtered[$key] = $value;
+    }
+
+    return $filtered;
+}
+
+/**
+ * Build a new array using a callback.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ *
+ * @return array
+ */
+function array_build($array, Closure $callback)
+{
+    $results = array();
+
+    foreach ($array as $key => $value)
+    {
+        list($innerKey, $innerValue) = call_user_func($callback, $key, $value);
+        $results[$innerKey] = $innerValue;
+    }
+
+    return $results;
+}
+
+/**
+ * Flatten a multi-dimensional associative array with dots.
+ *
+ * @param  array   $array
+ * @param  string  $prepend
+ *
+ * @return array
+ */
+function array_dot($array, $prepend = '')
+{
+    $results = array();
+
+    foreach ($array as $key => $value)
+    {
+        if (is_array($value))
+        {
+            $results = array_merge($results, dot($value, $prepend.$key.'.'));
+        }
+        else
+        {
+            $results[$prepend.$key] = $value;
+        }
+    }
+
+    return $results;
+}
+
+/**
+ * Get all of the given array except for a specified array of items.
+ *
+ * @param  array  $array
+ * @param  array|string  $keys
+ *
+ * @return array
+ */
+function array_except($array, $keys)
+{
+    return array_diff_key($array, array_flip((array) $keys));
+}
+
+/**
+ * Return the first element in an array passing a given truth test.
+ *
+ * @param  array     $array
+ * @param  \Closure  $callback
+ * @param  mixed     $default
+ *
+ * @return mixed
+ */
+function array_first($array, $callback, $default = null)
+{
+    foreach ($array as $key => $value)
+    {
+        if (call_user_func($callback, $key, $value)) return $value;
+    }
+
+    return value($default);
+}
+
+/**
+ * Flatten a multi-dimensional array into a single level.
+ *
+ * @param  array  $array
+ *
+ * @return array
+ */
+function array_flatten($array)
+{
+    $value = array();
+
+    array_walk_recursive($array, function($x) use (&$return) { $return[] = $x; });
+
+    return $value;
+}
