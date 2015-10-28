@@ -6,7 +6,7 @@ namespace Spatie;
  * Get a random value from an array.
  *
  * @param array $array
- * @param int $numReq  The amount of values to return
+ * @param int   $numReq The amount of values to return
  *
  * @return mixed
  */
@@ -50,7 +50,7 @@ function array_rand_weighted(array $array)
  * Determine if all given needles are present in the haystack.
  *
  * @param array|string $needles
- * @param array $haystack
+ * @param array        $haystack
  *
  * @return bool
  */
@@ -67,7 +67,7 @@ function values_in_array($needles, array $haystack)
  * Determine if all given needles are present in the haystack as array keys.
  *
  * @param array|string $needles
- * @param array $haystack
+ * @param array        $haystack
  *
  * @return bool
  */
@@ -89,7 +89,7 @@ function array_keys_exist($needles, array $haystack)
  *
  * Array keys are preserved.
  *
- * @param array $array
+ * @param array    $array
  * @param callable $callback
  *
  * @return array
@@ -98,9 +98,29 @@ function array_split_filter(array $array, callable $callback)
 {
     $passesFilter = array_filter($array, $callback);
 
-    $negatedCallback = function ($item) use ($callback) { return ! $callback($item); };
+    $negatedCallback = function ($item) use ($callback) { return !$callback($item); };
 
     $doesNotPassFilter = array_filter($array, $negatedCallback);
 
     return [$passesFilter, $doesNotPassFilter];
+}
+
+/**
+ * Split an array in the given amount of pieces.
+ *
+ * @param array $array
+ * @param int   $numberOfPieces
+ * @param bool  $preserveKeys
+ *
+ * @return array
+ */
+function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
+{
+    if (count($array) === 0) {
+        return [];
+    }
+
+    $splitSize = ceil(count($array) / $numberOfPieces);
+
+    return array_chunk($array, $splitSize, $preserveKeys);
 }

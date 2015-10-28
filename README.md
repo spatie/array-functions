@@ -95,6 +95,19 @@ function array_keys_exist($needles, array $haystack)
 function array_split_filter(array $array, callable $callback)
 ```
 
+### array_split
+```php
+/**
+ * Split an array in the given amount of pieces.
+ *
+ * @param array $array
+ * @param int $numberOfPieces
+ * @param bool $preserveKeys
+ * @return array
+ */
+function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
