@@ -4,7 +4,7 @@ namespace Spatie\Test;
 
 use function spatie\array_merge_values;
 
-class MergeValuesTest extends \PHPUnit_Framework_TestCase
+class ArrayMergeValuesTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

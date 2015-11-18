@@ -5,7 +5,7 @@ All Notable changes to `array-functions` will be documented in this file
 ## 1.7.0 - 2015-11-18
 
 ### Added
-- array_split function
+- array_merge_values function
 
 ## 1.6.0 - 2015-10-28
 
