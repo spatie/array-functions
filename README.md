@@ -109,6 +109,7 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 ```
 
 ### array_merge_values
+```php
 /**
  * Returns an array with the unique values from all the given arrays
  *
@@ -116,6 +117,7 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
  * @return array
  */
 function array_merge_values(array ... $arrays)
+```
 
 ## Change log
 
