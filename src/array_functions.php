@@ -124,3 +124,19 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 
     return array_chunk($array, $splitSize, $preserveKeys);
 }
+
+/**
+ * Returns an array with the unique values from all the given arrays
+ *
+ * @param \array[] $arrays
+ * @return array
+ */
+function array_merge_values(array ... $arrays)
+{
+    $allValues = array_reduce($arrays, function($carry, $array) {
+         return array_merge($carry, $array);
+    }, []);
+
+    return array_values(array_unique($allValues));
+
+}

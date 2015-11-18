@@ -108,6 +108,15 @@ function array_split_filter(array $array, callable $callback)
 function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 ```
 
+### array_merge_values
+/**
+ * Returns an array with the unique values from all the given arrays
+ *
+ * @param \array[] $arrays
+ * @return array
+ */
+function array_merge_values(array ... $arrays)
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
