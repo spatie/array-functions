@@ -60,7 +60,7 @@ function values_in_array($needles, array $haystack)
         $needles = [$needles];
     }
 
-    return count(array_intersect($needles, $haystack)) == count($needles);
+    return count(array_intersect($needles, $haystack)) === count($needles);
 }
 
 /**
