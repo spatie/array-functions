@@ -2,6 +2,11 @@
 
 All Notable changes to `array-functions` will be documented in this file
 
+## 1.8.0 - 2016-03-08
+
+### Added
+- array_flatten function
+
 ## 1.7.0 - 2015-11-18
 
 ### Added

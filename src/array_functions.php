@@ -140,3 +140,34 @@ function array_merge_values(array ...$arrays)
 
     return array_values(array_unique($allValues));
 }
+
+/**
+ * Flatten an array of arrays. The `$levels` parameter specifies how deep you want to
+ * recurse in the array. If `$levels` is -1, the function will recurse infinitely.
+ *
+ * @param array $array
+ * @param int   $levels
+ *
+ * @return array
+ */
+function array_flatten(array $array, $levels = -1)
+{
+    if ($levels === 0) {
+        return $array;
+    }
+
+    $flattened = [];
+
+    if ($levels !== -1) {
+        --$levels;
+    }
+
+    foreach ($array as $element) {
+        $flattened = array_merge(
+            $flattened,
+            is_array($element) ? array_flatten($element, $levels) : [$element]
+        );
+    }
+
+    return $flattened;
+}
