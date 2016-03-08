@@ -119,6 +119,20 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 function array_merge_values(array ... $arrays)
 ```
 
+### array_flatten
+```php
+/**
+ * Flatten an array of arrays. The `$levels` parameter specifies how deep you want to
+ * recurse in the array. If `$levels` is -1, the function will recurse infinitely.
+ *
+ * @param array $array
+ * @param int $levels
+ *
+ * @return array
+ */
+function array_flatten(array $array, $levels = -1)
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
