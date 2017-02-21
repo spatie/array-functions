@@ -6,7 +6,7 @@ namespace Spatie;
  * Get a random value from an array.
  *
  * @param array $array
- * @param int   $numReq The amount of values to return
+ * @param int $numReq The amount of values to return
  *
  * @return mixed
  */
@@ -50,7 +50,7 @@ function array_rand_weighted(array $array)
  * Determine if all given needles are present in the haystack.
  *
  * @param array|string $needles
- * @param array        $haystack
+ * @param array $haystack
  *
  * @return bool
  */
@@ -67,7 +67,7 @@ function values_in_array($needles, array $haystack)
  * Determine if all given needles are present in the haystack as array keys.
  *
  * @param array|string $needles
- * @param array        $haystack
+ * @param array $haystack
  *
  * @return bool
  */
@@ -89,7 +89,7 @@ function array_keys_exist($needles, array $haystack)
  *
  * Array keys are preserved.
  *
- * @param array    $array
+ * @param array $array
  * @param callable $callback
  *
  * @return array
@@ -98,7 +98,9 @@ function array_split_filter(array $array, callable $callback)
 {
     $passesFilter = array_filter($array, $callback);
 
-    $negatedCallback = function ($item) use ($callback) { return !$callback($item); };
+    $negatedCallback = function ($item) use ($callback) {
+        return !$callback($item);
+    };
 
     $doesNotPassFilter = array_filter($array, $negatedCallback);
 
@@ -109,8 +111,8 @@ function array_split_filter(array $array, callable $callback)
  * Split an array in the given amount of pieces.
  *
  * @param array $array
- * @param int   $numberOfPieces
- * @param bool  $preserveKeys
+ * @param int $numberOfPieces
+ * @param bool $preserveKeys
  *
  * @return array
  */
@@ -135,7 +137,7 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 function array_merge_values(array ...$arrays)
 {
     $allValues = array_reduce($arrays, function ($carry, $array) {
-         return array_merge($carry, $array);
+        return array_merge($carry, $array);
     }, []);
 
     return array_values(array_unique($allValues));
@@ -146,7 +148,7 @@ function array_merge_values(array ...$arrays)
  * recurse in the array. If `$levels` is -1, the function will recurse infinitely.
  *
  * @param array $array
- * @param int   $levels
+ * @param int $levels
  *
  * @return array
  */
@@ -171,3 +173,43 @@ function array_flatten(array $array, $levels = -1)
 
     return $flattened;
 }
+
+/**
+ * recurse array key from snake_case to camelCase
+ * @param array $array
+ * @return  array
+ */
+function array_keys_snake2camel(array $array)
+{
+    foreach ($array as $key => &$sub) {
+        if (strpos($key, '_') !== false) {
+            $newKey = lcfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $key))));
+            $array[$newKey] = $sub;
+            unset ($array[$key]);
+        } elseif (is_array($sub)) {
+            $sub = array_keys_snake2camel($sub);
+        }
+    }
+
+    return $array;
+}
+
+/**
+ * recurse array key from camelCase to snake_case
+ * @param array $array
+ * @return  array
+ */
+function array_keys_camel2snake(array $array)
+{
+    foreach ($array as $key => &$sub) {
+        if (preg_match('/(?<!^)[A-Z]/', $key)) {
+            $newKey = strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $key));
+            $array[$newKey] = $sub;
+            unset($array[$key]);
+        } else if (is_array($sub)) {
+            $sub = array_keys_camel2snake($sub);
+        }
+    }
+    return $array;
+}
+
