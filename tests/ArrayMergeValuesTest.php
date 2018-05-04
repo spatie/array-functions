@@ -3,8 +3,9 @@
 namespace Spatie\Test;
 
 use function spatie\array_merge_values;
+use PHPUnit\Framework\TestCase;
 
-class ArrayMergeValuesTest extends \PHPUnit_Framework_TestCase
+class ArrayMergeValuesTest extends TestCase
 {
     /**
      * @test

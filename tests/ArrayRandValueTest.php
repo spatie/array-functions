@@ -3,8 +3,9 @@
 namespace Spatie\Test;
 
 use function spatie\array_rand_value;
+use PHPUnit\Framework\TestCase;
 
-class ArrayRandValueTest extends \PHPUnit_Framework_TestCase
+class ArrayRandValueTest extends TestCase
 {
     protected $testArray = [
         'one' => 'a',

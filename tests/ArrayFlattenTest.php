@@ -3,8 +3,9 @@
 namespace Spatie\Test;
 
 use function spatie\array_flatten;
+use PHPUnit\Framework\TestCase;
 
-class ArrayFlattenTest extends \PHPUnit_Framework_TestCase
+class ArrayFlattenTest extends TestCase
 {
     /**
      * @test

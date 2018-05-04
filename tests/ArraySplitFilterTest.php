@@ -3,8 +3,9 @@
 namespace Spatie\Test;
 
 use function spatie\array_split_filter;
+use PHPUnit\Framework\TestCase;
 
-class ArraySplitFilterTest extends \PHPUnit_Framework_TestCase
+class ArraySplitFilterTest extends TestCase
 {
     /**
      * @test
