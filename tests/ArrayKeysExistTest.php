@@ -3,8 +3,9 @@
 namespace Spatie\Test;
 
 use function spatie\array_keys_exist;
+use PHPUnit\Framework\TestCase;
 
-class ArrayKeysExistTest extends \PHPUnit_Framework_TestCase
+class ArrayKeysExistTest extends TestCase
 {
     /**
      * @test

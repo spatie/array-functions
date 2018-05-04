@@ -3,8 +3,9 @@
 namespace Spatie\Test;
 
 use function spatie\array_rand_weighted;
+use PHPUnit\Framework\TestCase;
 
-class ArrayRandWeightedTest extends \PHPUnit_Framework_TestCase
+class ArrayRandWeightedTest extends TestCase
 {
     protected $testArray = [
         'foo' => 1,

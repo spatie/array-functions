@@ -3,8 +3,9 @@
 namespace Spatie\Test;
 
 use function spatie\array_split;
+use PHPUnit\Framework\TestCase;
 
-class ArraySplitTest extends \PHPUnit_Framework_TestCase
+class ArraySplitTest extends TestCase
 {
     /**
      * @test
