@@ -74,7 +74,7 @@ class ArrayChangeKeyCaseTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_php_spatie_upper_case()
+    public function it_works_with_spatie_upper_case()
     {
         $this->assertEquals(
             \array_change_key_case(self::SAMPLE_ARRAY, \CASE_UPPER),
@@ -85,7 +85,7 @@ class ArrayChangeKeyCaseTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_php_spatie_lower_case()
+    public function it_works_with_spatie_lower_case()
     {
         $this->assertEquals(
             \array_change_key_case(self::SAMPLE_ARRAY, \CASE_LOWER),
@@ -96,7 +96,7 @@ class ArrayChangeKeyCaseTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_php_snake_case()
+    public function it_works_with_snake_case()
     {
         $this->assertEquals(
             [
@@ -117,7 +117,7 @@ class ArrayChangeKeyCaseTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_php_title_case()
+    public function it_works_with_title_case()
     {
         $this->assertEquals(
             [
@@ -138,7 +138,7 @@ class ArrayChangeKeyCaseTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_php_camel_case()
+    public function it_works_with_camel_case()
     {
         $this->assertEquals(
             [
@@ -159,7 +159,7 @@ class ArrayChangeKeyCaseTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_php_pascal_case()
+    public function it_works_with_pascal_case()
     {
         $this->assertEquals(
             [
@@ -180,7 +180,7 @@ class ArrayChangeKeyCaseTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_php_lisp_case()
+    public function it_works_with_lisp_case()
     {
         $this->assertEquals(
             [
