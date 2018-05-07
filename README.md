@@ -141,6 +141,21 @@ function array_merge_values(array ... $arrays)
 function array_flatten(array $array, $levels = -1)
 ```
 
+### array_change_key_case
+```php
+/**
+ * Very similar to \array_change_key_case, accepts more cases:
+ * `CASE_LOWER`, `CASE_UPPER`, `CASE_SNAKE`, `CASE_TITLE`, `CASE_CAMEL`, `CASE_PASCAL`, `CASE_LISP`
+ * all in the `Spatie` namespace.
+ *
+ * @param array $array
+ * @param int   $case
+ *
+ * @return array
+ */
+function array_change_key_case(array $array, $case = CASE_LOWER)
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
