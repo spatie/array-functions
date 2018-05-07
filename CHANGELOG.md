@@ -2,6 +2,11 @@
 
 All Notable changes to `array-functions` will be documented in this file
 
+## Not released
+
+### Added
+- array_change_key_case function
+
 ## 1.8.0 - 2016-03-08
 
 ### Added

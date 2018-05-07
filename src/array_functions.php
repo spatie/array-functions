@@ -2,6 +2,14 @@
 
 namespace Spatie;
 
+const CASE_LOWER = \CASE_LOWER;
+const CASE_UPPER = \CASE_UPPER;
+const CASE_SNAKE = 2;
+const CASE_TITLE = 3;
+const CASE_CAMEL = 4;
+const CASE_PASCAL = 5;
+const CASE_LISP = 6;
+
 /**
  * Get a random value from an array.
  *
@@ -170,4 +178,75 @@ function array_flatten(array $array, $levels = -1)
     }
 
     return $flattened;
+}
+
+/**
+ * Very similar to \array_change_key_case, accepts more cases:
+ * `CASE_LOWER`, `CASE_UPPER`, `CASE_SNAKE`, `CASE_TITLE`, `CASE_CAMEL`, `CASE_PASCAL`, `CASE_LISP`
+ * all in the `Spatie` namespace.
+ *
+ * @param array $array
+ * @param int   $case
+ *
+ * @return array
+ */
+function array_change_key_case(array $array, $case = CASE_LOWER)
+{
+    if ($case === CASE_LOWER || $case === CASE_UPPER) {
+        return \array_change_key_case($array, $case);
+    }
+
+    // If case is invalid, no need to perform expensive operation.
+    if (!is_int($case) || $case < CASE_SNAKE || $case > CASE_LISP) {
+        return $array;
+    }
+
+    static $changeCase;
+    $changeCase or $changeCase = function ($key, $case) {
+        if (is_numeric($key)) {
+            return $key;
+        }
+
+        // change "camelCase" to "camel Case", "foo123bar" to "foo 123 bar", "foo!bar" to "foo! bar"
+        $key = preg_replace(
+            [
+                '/([^a-zA-Z0-9\s\_\-])([a-zA-Z0-9])/',
+                '/([a-z])([A-Z])/',
+                '/([a-zA-Z])([\d])/',
+                '/([\d])([a-zA-Z])/',
+            ],
+            '${1} ${2}',
+            $key
+        );
+
+        $words = preg_split('/_+|-+|\s+/', strtolower($key));
+
+        switch ($case) {
+            case CASE_SNAKE:
+                return implode('_', $words);
+            case CASE_TITLE:
+                return ucfirst(implode(' ', $words));
+            case CASE_CAMEL:
+            case CASE_PASCAL:
+                $first = $case === CASE_CAMEL ? array_shift($words) : '';
+                return preg_replace_callback(
+                    '/([^a-zA-Z]+)([a-zA-Z]{1})([^a-zA-Z]+)/',
+                    function (array $matches) {
+                        return $matches[1] . strtolower($matches[2]) . $matches[3];
+                    },
+                    $first . implode('', array_map('ucfirst', $words))
+                );
+            case CASE_LISP:
+                return implode('-', $words);
+            default:
+                return $key;
+        }
+    };
+
+    $changed = [];
+    foreach ($array as $key => $value) {
+        $changed[$changeCase($key, $case)]  = $value;
+    }
+
+    return $changed;
 }
