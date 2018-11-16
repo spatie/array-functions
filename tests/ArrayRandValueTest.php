@@ -29,7 +29,7 @@ class ArrayRandValueTest extends TestCase
         $testArrayValues = array_values($this->testArray);
         $randomArrayValue = array_rand_value($this->testArray);
 
-        $this->assertTrue(in_array($randomArrayValue, $testArrayValues));
+        $this->assertContains($randomArrayValue, $testArrayValues);
     }
 
     /**
@@ -43,7 +43,7 @@ class ArrayRandValueTest extends TestCase
         $this->assertCount(2, $randomArrayValues);
 
         foreach ($randomArrayValues as $randomArrayValue) {
-            $this->assertTrue(in_array($randomArrayValue, $testArrayValues));
+            $this->assertContains($randomArrayValue, $testArrayValues);
         }
     }
 }
