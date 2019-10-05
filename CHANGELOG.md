@@ -2,6 +2,11 @@
 
 All Notable changes to `array-functions` will be documented in this file
 
+## 1.9.0 - 2019-10-05
+
+- performance improvements
+- drop support for PHP 7.1 and below
+
 ## 1.8.0 - 2016-03-08
 
 ### Added
