@@ -98,7 +98,7 @@ function array_split_filter(array $array, callable $callback)
 {
     $passesFilter = array_filter($array, $callback);
 
-    $negatedCallback = function ($item) use ($callback) { return !$callback($item); };
+    $negatedCallback = static function ($item) use ($callback) { return !$callback($item); };
 
     $doesNotPassFilter = array_filter($array, $negatedCallback);
 
@@ -134,7 +134,7 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
  */
 function array_merge_values(array ...$arrays)
 {
-    $allValues = array_reduce($arrays, function ($carry, $array) {
+    $allValues = array_reduce($arrays, static function ($carry, $array) {
          return array_merge($carry, $array);
     }, []);
 
@@ -163,11 +163,8 @@ function array_flatten(array $array, $levels = -1)
     }
 
     foreach ($array as $element) {
-        $flattened = array_merge(
-            $flattened,
-            is_array($element) ? array_flatten($element, $levels) : [$element]
-        );
+        $flattened[] = is_array($element) ? array_flatten($element, $levels) : [$element];
     }
 
-    return $flattened;
+    return array_merge([], ...$flattened);
 }
