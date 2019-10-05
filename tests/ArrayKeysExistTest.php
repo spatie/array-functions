@@ -17,7 +17,7 @@ class ArrayKeysExistTest extends TestCase
     /**
      * @test
      */
-    public function it_doenst_treat_values_as_keys()
+    public function it_doesnt_treat_values_as_keys()
     {
         $this->assertFalse(array_keys_exist(['a', 'b'], ['a', 'b', 'c']));
     }
