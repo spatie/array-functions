@@ -1,6 +1,10 @@
 # Changelog
 
-All Notable changes to `array-functions` will be documented in this file
+All notable changes to `array-functions` will be documented in this file
+
+## 1.9.1 - 2019-10-14
+
+- fix division by zero in `array_split` (#16)
 
 ## 1.9.0 - 2019-10-05
 
