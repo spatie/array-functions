@@ -111,6 +111,7 @@ function array_split_filter(array $array, callable $callback)
  * @param array $array
  * @param int $numberOfPieces
  * @param bool $preserveKeys
+ * @throws \InvalidArgumentException
  * @return array
  */
 function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
