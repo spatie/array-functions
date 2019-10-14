@@ -19,7 +19,7 @@ class ArraySplitTest extends TestCase
      * @dataProvider argumentsProvider
      * @test
      */
-    public function it_throws_exception_when_second_parameter_is_lower_then_1($numberOfPieces, $mustThrow)
+    public function it_throws_exception_when_second_parameter_is_lower_than_1($numberOfPieces, $mustThrow)
     {
         $exception = null;
         try {

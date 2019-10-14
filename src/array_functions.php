@@ -111,7 +111,7 @@ function array_split_filter(array $array, callable $callback)
  * @param array $array
  * @param int   $numberOfPieces
  * @param bool  $preserveKeys
- * @throws \InvalidArgumentException if the provided argument $numberOfPieces is lower then 1
+ * @throws \InvalidArgumentException if the provided argument $numberOfPieces is lower than 1
  *
  * @return array
  */
