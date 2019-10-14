@@ -16,6 +16,31 @@ class ArraySplitTest extends TestCase
     }
 
     /**
+     * @dataProvider argumentsProvider
+     * @test
+     */
+    public function it_throws_exception_when_second_parameter_is_lower_than_1($numberOfPieces, $mustThrow)
+    {
+        $exception = null;
+        try {
+            array_split([], $numberOfPieces);
+        } catch (\InvalidArgumentException $exception) {}
+
+        $this->assertSame($mustThrow, $exception instanceof \InvalidArgumentException);
+    }
+
+    public function argumentsProvider()
+    {
+        return [
+          [2 , false],
+          [1 , false],
+          [0 , true],
+          [-1 , true],
+          [-2 , true],
+        ];
+    }
+
+    /**
      * @test
      */
     public function it_splits_an_array_in_two_by_default()
