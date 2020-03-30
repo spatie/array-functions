@@ -35,15 +35,21 @@ function array_rand_value(array $array, $numReq = 1)
  */
 function array_rand_weighted(array $array)
 {
-    $options = [];
+    $array = array_filter($array, function ($item) {
+        return $item >= 1;
+    });
 
-    foreach ($array as $option => $weight) {
-        for ($i = 0; $i < $weight; ++$i) {
-            $options[] = $option;
-        }
+    if (!count($array)) {
+        return;
     }
+    $totalWeight = array_sum($array);
 
-    return array_rand_value($options);
+    foreach ($array as $value => $weight) {
+        if (rand(1, $totalWeight) <= $weight) {
+            return $value;
+        }
+        $totalWeight -= $weight;
+    }
 }
 
 /**
