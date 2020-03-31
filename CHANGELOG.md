@@ -2,6 +2,10 @@
 
 All notable changes to `array-functions` will be documented in this file
 
+## 1.9.2 - 2019-03-31
+
+- optimize array_rand_weighted (#19)
+
 ## 1.9.1 - 2019-10-14
 
 - fix division by zero in `array_split` (#16)
