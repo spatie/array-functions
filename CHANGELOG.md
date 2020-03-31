@@ -2,7 +2,7 @@
 
 All notable changes to `array-functions` will be documented in this file
 
-## 1.9.2 - 2019-03-31
+## 1.9.2 - 2020-03-31
 
 - optimize array_rand_weighted (#19)
 
