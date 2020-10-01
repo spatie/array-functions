@@ -53,6 +53,7 @@ The following functions are provided in the `Spatie`-namespace:
  * @return mixed
  */
 function array_rand_value(array $array, $numReq = 1)
+The array_rand() function returns a random key from an array, or it returns an array of random keys if you specify that the function should return more than one key.
 ```
 
 ### array_rand_weighted
