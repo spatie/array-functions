@@ -12,7 +12,7 @@ namespace Spatie;
  */
 function array_rand_value(array $array, $numReq = 1)
 {
-    if (!count($array)) {
+    if (!$array) {
         return;
     }
 
@@ -35,13 +35,14 @@ function array_rand_value(array $array, $numReq = 1)
  */
 function array_rand_weighted(array $array)
 {
-    $array = array_filter($array, function ($item) {
+    $array = array_filter($array, static function ($item) {
         return $item >= 1;
     });
 
-    if (!count($array)) {
+    if (!$array) {
         return;
     }
+
     $totalWeight = array_sum($array);
 
     foreach ($array as $value => $weight) {
@@ -62,9 +63,7 @@ function array_rand_weighted(array $array)
  */
 function values_in_array($needles, array $haystack)
 {
-    if (!is_array($needles)) {
-        $needles = [$needles];
-    }
+    $needles = (array) $needles;
 
     return count(array_intersect($needles, $haystack)) === count($needles);
 }
@@ -127,7 +126,7 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
         throw new \InvalidArgumentException('Number of pieces parameter expected to be greater than 0');
     }
 
-    if (count($array) === 0) {
+    if (!$array) {
         return [];
     }
 
