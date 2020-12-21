@@ -2,8 +2,8 @@
 
 namespace Spatie\Test;
 
-use function spatie\values_in_array;
 use PHPUnit\Framework\TestCase;
+use function spatie\values_in_array;
 
 class ValuesInArrayTest extends TestCase
 {

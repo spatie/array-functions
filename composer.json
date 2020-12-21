@@ -18,10 +18,10 @@
         }
     ],
     "require": {
-        "php" : "^7.2"
+        "php" : "^7.4|^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : "^7.0"
+        "phpunit/phpunit" : "^9.4"
     },
     "autoload": {
         "files": ["src/array_functions.php"]
