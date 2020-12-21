@@ -2,8 +2,8 @@
 
 namespace Spatie\Test;
 
-use function spatie\array_rand_value;
 use PHPUnit\Framework\TestCase;
+use function spatie\array_rand_value;
 
 class ArrayRandValueTest extends TestCase
 {

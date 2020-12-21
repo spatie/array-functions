@@ -2,8 +2,8 @@
 
 namespace Spatie\Test;
 
-use function spatie\array_split;
 use PHPUnit\Framework\TestCase;
+use function spatie\array_split;
 
 class ArraySplitTest extends TestCase
 {
@@ -22,9 +22,11 @@ class ArraySplitTest extends TestCase
     public function it_throws_exception_when_second_parameter_is_lower_than_1($numberOfPieces, $mustThrow)
     {
         $exception = null;
+
         try {
             array_split([], $numberOfPieces);
-        } catch (\InvalidArgumentException $exception) {}
+        } catch (\InvalidArgumentException $exception) {
+        }
 
         $this->assertSame($mustThrow, $exception instanceof \InvalidArgumentException);
     }

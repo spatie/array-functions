@@ -2,8 +2,8 @@
 
 namespace Spatie\Test;
 
-use function spatie\array_keys_exist;
 use PHPUnit\Framework\TestCase;
+use function spatie\array_keys_exist;
 
 class ArrayKeysExistTest extends TestCase
 {
@@ -14,6 +14,7 @@ class ArrayKeysExistTest extends TestCase
     {
         $this->assertTrue(array_keys_exist(['a', 'b'], ['a' => 'foo', 'b' => 'bar', 'c' => 'baz']));
     }
+
     /**
      * @test
      */

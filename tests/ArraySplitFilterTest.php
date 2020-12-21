@@ -2,8 +2,8 @@
 
 namespace Spatie\Test;
 
-use function spatie\array_split_filter;
 use PHPUnit\Framework\TestCase;
+use function spatie\array_split_filter;
 
 class ArraySplitFilterTest extends TestCase
 {
@@ -14,8 +14,12 @@ class ArraySplitFilterTest extends TestCase
     {
         $numbers = range(1, 6);
 
-        $evenTest = function ($number) { return $number % 2 == 0; };
-        $oddTest = function ($number) { return $number % 2 != 0; };
+        $evenTest = function ($number) {
+            return $number % 2 == 0;
+        };
+        $oddTest = function ($number) {
+            return $number % 2 != 0;
+        };
 
         $this->assertSame(array_filter($numbers, $evenTest), array_split_filter($numbers, $evenTest)[0]);
         $this->assertSame(array_filter($numbers, $oddTest), array_split_filter($numbers, $evenTest)[1]);
@@ -26,7 +30,9 @@ class ArraySplitFilterTest extends TestCase
      */
     public function it_can_handle_an_empty_array()
     {
-        $this->assertTrue(is_array(array_split_filter([], function () {})));
-        $this->assertCount(2, array_split_filter([], function () {}));
+        $this->assertTrue(is_array(array_split_filter([], function () {
+        })));
+        $this->assertCount(2, array_split_filter([], function () {
+        }));
     }
 }

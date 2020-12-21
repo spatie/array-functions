@@ -2,8 +2,8 @@
 
 namespace Spatie\Test;
 
-use function spatie\array_rand_weighted;
 use PHPUnit\Framework\TestCase;
+use function spatie\array_rand_weighted;
 
 class ArrayRandWeightedTest extends TestCase
 {

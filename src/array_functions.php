@@ -12,7 +12,7 @@ namespace Spatie;
  */
 function array_rand_value(array $array, $numReq = 1)
 {
-    if (!count($array)) {
+    if (! count($array)) {
         return;
     }
 
@@ -39,7 +39,7 @@ function array_rand_weighted(array $array)
         return $item >= 1;
     });
 
-    if (!count($array)) {
+    if (! count($array)) {
         return;
     }
     $totalWeight = array_sum($array);
@@ -62,7 +62,7 @@ function array_rand_weighted(array $array)
  */
 function values_in_array($needles, array $haystack)
 {
-    if (!is_array($needles)) {
+    if (! is_array($needles)) {
         $needles = [$needles];
     }
 
@@ -79,7 +79,7 @@ function values_in_array($needles, array $haystack)
  */
 function array_keys_exist($needles, array $haystack)
 {
-    if (!is_array($needles)) {
+    if (! is_array($needles)) {
         return array_key_exists($needles, $haystack);
     }
 
@@ -104,7 +104,9 @@ function array_split_filter(array $array, callable $callback)
 {
     $passesFilter = array_filter($array, $callback);
 
-    $negatedCallback = static function ($item) use ($callback) { return !$callback($item); };
+    $negatedCallback = static function ($item) use ($callback) {
+        return ! $callback($item);
+    };
 
     $doesNotPassFilter = array_filter($array, $negatedCallback);
 
@@ -146,7 +148,7 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 function array_merge_values(array ...$arrays)
 {
     $allValues = array_reduce($arrays, static function ($carry, $array) {
-         return array_merge($carry, $array);
+        return array_merge($carry, $array);
     }, []);
 
     return array_values(array_unique($allValues));
