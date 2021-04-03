@@ -2,6 +2,10 @@
 
 All notable changes to `array-functions` will be documented in this file
 
+## 1.9.3 - 2021-04-03
+
+- test enhancement and integrate GitHub Actions (#22)
+
 ## 1.9.2 - 2020-03-31
 
 - optimize array_rand_weighted (#19)
