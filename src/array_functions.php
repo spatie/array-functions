@@ -34,9 +34,7 @@ function array_rand_value(array $array, int $numReq = 1)
  */
 function array_rand_weighted(array $array)
 {
-    $array = array_filter($array, function ($item) {
-        return $item >= 1;
-    });
+    $array = array_filter($array, static fn ($item) => $item >= 1);
 
     if (! count($array)) {
         return null;
@@ -94,9 +92,7 @@ function array_split_filter(array $array, callable $callback): array
 {
     $passesFilter = array_filter($array, $callback);
 
-    $negatedCallback = static function ($item) use ($callback) {
-        return ! $callback($item);
-    };
+    $negatedCallback = static fn ($item) => ! $callback($item);
 
     $doesNotPassFilter = array_filter($array, $negatedCallback);
 
@@ -130,9 +126,7 @@ function array_split(array $array, int $numberOfPieces = 2, bool $preserveKeys =
  */
 function array_merge_values(array ...$arrays): array
 {
-    $allValues = array_reduce($arrays, static function ($carry, $array) {
-        return [...$carry, ...$array];
-    }, []);
+    $allValues = array_reduce($arrays, static fn ($carry, $array) => [...$carry, ...$array], []);
 
     return array_values(array_unique($allValues));
 }
