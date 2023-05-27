@@ -169,7 +169,7 @@ function array_split(array $array, int $numberOfPieces = 2, bool $preserveKeys =
  */
 function array_merge_values(array ...$arrays): array
 {
-    $allValues = array_reduce($arrays, static fn ($carry, $array) => [...$carry, ...$array], []);
+    $allValues = array_merge(...$arrays);
 
     return array_values(array_unique($allValues));
 }
