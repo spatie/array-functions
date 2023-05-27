@@ -131,7 +131,7 @@ function array_split(array $array, int $numberOfPieces = 2, bool $preserveKeys =
 function array_merge_values(array ...$arrays): array
 {
     $allValues = array_reduce($arrays, static function ($carry, $array) {
-        return array_merge($carry, $array);
+        return [...$carry, ...$array];
     }, []);
 
     return array_values(array_unique($allValues));
