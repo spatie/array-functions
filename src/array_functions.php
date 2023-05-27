@@ -13,7 +13,7 @@ namespace Spatie;
 function array_rand_value(array $array, $numReq = 1)
 {
     if (! count($array)) {
-        return;
+        return null;
     }
 
     $keys = array_rand($array, $numReq);
@@ -40,7 +40,7 @@ function array_rand_weighted(array $array)
     });
 
     if (! count($array)) {
-        return;
+        return null;
     }
     $totalWeight = array_sum($array);
 
@@ -50,6 +50,8 @@ function array_rand_weighted(array $array)
         }
         $totalWeight -= $weight;
     }
+
+    return null;
 }
 
 /**
