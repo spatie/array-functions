@@ -150,7 +150,7 @@ function array_flatten(array $array, int $levels = -1): array
     $flattened = [];
 
     if ($levels !== -1) {
-        --$levels;
+        $levels--;
     }
 
     foreach ($array as $element) {
