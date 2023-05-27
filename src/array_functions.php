@@ -107,7 +107,13 @@ function array_keys_exist($needles, array $haystack): bool
         return array_key_exists($needles, $haystack);
     }
 
-    return values_in_array($needles, array_keys($haystack));
+    foreach ($needles as $needle) {
+        if (! array_key_exists($needle, $haystack)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 /**
