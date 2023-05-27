@@ -44,7 +44,7 @@ function array_rand_weighted(array $array)
     $totalWeight = array_sum($array);
 
     foreach ($array as $value => $weight) {
-        if (rand(1, $totalWeight) <= $weight) {
+        if (random_int(1, $totalWeight) <= $weight) {
             return $value;
         }
         $totalWeight -= $weight;
