@@ -55,13 +55,15 @@ function array_rand_weighted(array $array)
     if (empty($array)) {
         return null;
     }
+
     $totalWeight = array_sum($array);
+    $randomWeight = random_int(1, $totalWeight);
 
     foreach ($array as $value => $weight) {
-        if (random_int(1, $totalWeight) <= $weight) {
+        if ($randomWeight <= $weight) {
             return $value;
         }
-        $totalWeight -= $weight;
+        $randomWeight -= $weight;
     }
 
     return null;
