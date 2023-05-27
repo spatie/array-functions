@@ -39,7 +39,7 @@ function array_rand_value(array $array, int $numReq = 1)
         return $array[$keys];
     }
 
-    return array_intersect_key($array, array_flip($keys));
+    return array_map(static fn ($key) => $array[$key], $keys);
 }
 
 /**
