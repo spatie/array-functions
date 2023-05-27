@@ -52,7 +52,7 @@ function array_rand_weighted(array $array)
 {
     $array = array_filter($array, static fn ($item) => $item >= 1);
 
-    if (! count($array)) {
+    if (empty($array)) {
         return null;
     }
     $totalWeight = array_sum($array);
