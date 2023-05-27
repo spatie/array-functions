@@ -13,8 +13,24 @@ use InvalidArgumentException;
  */
 function array_rand_value(array $array, int $numReq = 1)
 {
-    if (! count($array)) {
+    $itemCount = count($array);
+
+    if ($itemCount === 0) {
         return null;
+    }
+
+    if ($numReq < 1) {
+        $numReq = 1;
+    }
+
+    if ($numReq > $itemCount) {
+        $numReq = $itemCount;
+    }
+
+    if ($numReq === $itemCount) {
+        shuffle($array);
+
+        return $array;
     }
 
     $keys = array_rand($array, $numReq);
