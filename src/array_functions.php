@@ -74,11 +74,26 @@ function array_rand_weighted(array $array)
  */
 function values_in_array($needles, array $haystack): bool
 {
+    if (empty($needles) && empty($haystack)) {
+        return true;
+    }
+
+    if (! empty($needles) && empty($haystack)) {
+        return false;
+    }
+
     if (! is_array($needles)) {
         $needles = [$needles];
     }
 
-    return count(array_intersect($needles, $haystack)) === count($needles);
+    $lookup = array_flip($haystack);
+    foreach ($needles as $needle) {
+        if (! isset($lookup[$needle])) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 /**
