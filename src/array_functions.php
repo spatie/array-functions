@@ -127,11 +127,16 @@ function array_keys_exist($needles, array $haystack): bool
  */
 function array_split_filter(array $array, callable $callback): array
 {
-    $passesFilter = array_filter($array, $callback);
+    $passesFilter = [];
+    $doesNotPassFilter = [];
 
-    $negatedCallback = static fn ($item) => ! $callback($item);
-
-    $doesNotPassFilter = array_filter($array, $negatedCallback);
+    foreach ($array as $key => $value) {
+        if ($callback($value)) {
+            $passesFilter[$key] = $value;
+        } else {
+            $doesNotPassFilter[$key] = $value;
+        }
+    }
 
     return [$passesFilter, $doesNotPassFilter];
 }
