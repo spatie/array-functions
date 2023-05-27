@@ -2,6 +2,8 @@
 
 namespace Spatie;
 
+use InvalidArgumentException;
+
 /**
  * Get a random value from an array.
  *
@@ -121,14 +123,14 @@ function array_split_filter(array $array, callable $callback)
  * @param array $array
  * @param int   $numberOfPieces
  * @param bool  $preserveKeys
- * @throws \InvalidArgumentException if the provided argument $numberOfPieces is lower than 1
+ * @throws InvalidArgumentException if the provided argument $numberOfPieces is lower than 1
  *
  * @return array
  */
 function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 {
     if ($numberOfPieces <= 0) {
-        throw new \InvalidArgumentException('Number of pieces parameter expected to be greater than 0');
+        throw new InvalidArgumentException('Number of pieces parameter expected to be greater than 0');
     }
 
     if (count($array) === 0) {
@@ -143,7 +145,7 @@ function array_split(array $array, $numberOfPieces = 2, $preserveKeys = false)
 /**
  * Returns an array with the unique values from all the given arrays.
  *
- * @param \array[] $arrays
+ * @param array[] $arrays
  *
  * @return array
  */
