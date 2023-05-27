@@ -152,11 +152,12 @@ function array_split(array $array, int $numberOfPieces = 2, bool $preserveKeys =
         throw new InvalidArgumentException('Number of pieces parameter expected to be greater than 0');
     }
 
-    if (count($array) === 0) {
+    $count = count($array);
+    if ($count === 0) {
         return [];
     }
 
-    $splitSize = ceil(count($array) / $numberOfPieces);
+    $splitSize = ceil($count / $numberOfPieces);
 
     return array_chunk($array, $splitSize, $preserveKeys);
 }
