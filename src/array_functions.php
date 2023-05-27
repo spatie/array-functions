@@ -50,7 +50,7 @@ function array_rand_value(array $array, int $numReq = 1)
  */
 function array_rand_weighted(array $array)
 {
-    $array = array_filter($array, static fn ($item) => $item >= 1);
+    $array = array_filter($array, static fn ($item) => (int)$item >= 1);
 
     if (empty($array)) {
         return null;
