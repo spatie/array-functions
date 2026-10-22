@@ -13,7 +13,7 @@ Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/array-functions.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/array-functions)
+[<img src="https://spatie.be/github-ad-image/array-functions.jpg" width="419px" />](https://spatie.be/github-ad-click/array-functions)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
